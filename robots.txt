@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://harnessix.github.io/kilora-site/sitemap.xml

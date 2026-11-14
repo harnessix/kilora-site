@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install · KiLoRA</title>
+<meta name="description" content="Install the ComfyUI node package or the Python package, and put mod files in the right folder.">
+<link rel="canonical" href="https://harnessix.github.io/kilora-site/install/">
+<meta name="theme-color" content="#eef0eb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11120f" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KiLoRA">
+<meta property="og:title" content="Install · KiLoRA">
+<meta property="og:description" content="Install the ComfyUI node package or the Python package, and put mod files in the right folder.">
+<meta property="og:url" content="https://harnessix.github.io/kilora-site/install/">
+<meta property="og:image" content="https://harnessix.github.io/kilora-site/assets/banner.1c1c6410ca.png">
+<meta property="og:image:width" content="1680">
+<meta property="og:image:height" content="720">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Install · KiLoRA">
+<meta name="twitter:description" content="Install the ComfyUI node package or the Python package, and put mod files in the right folder.">
+<meta name="twitter:image" content="https://harnessix.github.io/kilora-site/assets/banner.1c1c6410ca.png">
+<link rel="preload" href="../assets/fonts/bricolage-var.aebe1ebbd3.woff" as="font" type="font/woff" crossorigin>
+<link rel="icon" href="../assets/icon.81e6618a1c.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.258ebed6ac.png">
+<link rel="manifest" href="../site.webmanifest">
+
+<link rel="stylesheet" href="../assets/site.c50ab05e8c.css">
+<link rel="stylesheet" href="../assets/toon.56abc6d321.css">
+<script>window.SITE_ROOT = "../";</script>
+<script defer src="../assets/site-data.723903dc5b.js"></script>
+<script defer src="../assets/site.82b37228dd.js"></script>
+</head>
+<body class="subpage">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <a class="brand" href="../" aria-label="KiLoRA home"><img class="mark" src="../assets/icon.81e6618a1c.svg" alt="" width="28" height="28">KiLoRA</a>
+  <nav aria-label="Pages">
+    <a href="../#mix">Mix</a>
+    <a href="../#make">Make your own</a>
+    <a href="../install/">Install</a>
+    <a href="../docs/">Docs</a>
+    <a href="../license/">License</a>
+  </nav>
+  
+  <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme" aria-pressed="false">
+    <svg class="i-moon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path></svg>
+    <svg class="i-sun" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+  </button>
+  <a class="btn btn-small" href="https://github.com/harnessix/kilora" rel="noopener">GitHub</a>
+</header>
+
+<main id="main" class="page">
+<header class="page-head">
+  <h1>Install</h1>
+  <p class="section-lede">KiLoRA runs in ComfyUI. Install it from GitHub.</p>
+  
+</header>
+<section class="page-sec" aria-labelledby="comfy-h">
+  <h2 id="comfy-h">ComfyUI</h2>
+  <div class="install-block" data-install>
+  <div class="ib-panel">
+    <h3 class="ib-h">Install from GitHub</h3>
+    <div class="pre-wrap"><pre><code>git clone https://github.com/harnessix/kilora ComfyUI/custom_nodes/kilora</code></pre><button class="copy" type="button" data-copy>Copy</button></div>
+    <p>Then install its Python packages with the Python that runs ComfyUI, and restart ComfyUI:</p>
+    <div class="pre-wrap"><pre><code>python -m pip install -r ComfyUI/custom_nodes/kilora/requirements.txt</code></pre><button class="copy" type="button" data-copy>Copy</button></div>
+  </div>
+  <p class="ib-status"><span>Mods go in <code>ComfyUI/models/kilora/</code>, not in <code>models/loras/</code></span><a href="https://github.com/harnessix/kilora">Source on GitHub</a></p>
+</div>
+  <p>Put mod files (<code>.kmod.safetensors</code>) into <code>ComfyUI/models/kilora/</code>. Plain LoRA files stay in <code>ComfyUI/models/loras/</code>.</p>
+</section>
+<section class="page-sec band-box" aria-labelledby="nodes-h">
+  <h2 id="nodes-h">Load one mod</h2>
+  <ol class="plain-list">
+    <li>Load the base model with your usual loader.</li>
+    <li>Add <b>KiLoRA Load Mod</b> and connect the model.</li>
+    <li>Pick the mod in <code>file</code> and set <code>strength</code>: 1 is the trained strength, 0 is off, below 0 pushes away from the mod. The range is -2 to 2.</li>
+    <li>Leave <code>depth</code> at -1 to use the depth that the mod recommends.</li>
+    <li>Connect the <code>model</code> output to your sampler.</li>
+  </ol>
+  <p><b>KiLoRA Mod Info</b> reads the creator's hints from a mod: the recommended strength, trigger words and an example prompt.</p>
+</section>
+<section class="page-sec band-box" aria-labelledby="req-h">
+  <h2 id="req-h">Requirements</h2>
+  <p>Static mods need what the base model needs, plus the mod file. </p>
+  
+</section>
+
+</main>
+<footer class="foot">
+  <div class="foot-grid">
+    <div>
+      <p class="brand"><img class="mark" src="../assets/icon.81e6618a1c.svg" alt="" width="28" height="28">KiLoRA</p>
+      <p class="muted">Keyed, Iterative and Composable Low-Rank Adaptation. Made by harnessix.</p>
+      <p class="muted small">Example mods are trained on <a href="../license/#training-data">PD12M</a>: CC0 and Public Domain Mark images, with metadata under CDLA-Permissive-2.0.</p>
+    </div>
+    <ul class="links">
+      <li><a href="../#mix">Mix</a></li>
+      <li><a href="../#make">Make your own</a></li>
+      <li><a href="../install/">Install</a></li>
+      <li><a href="../docs/">Docs</a></li>
+      
+      <li><a href="../license/">License and attribution</a></li>
+      <li><a href="https://github.com/harnessix/kilora" rel="noopener">GitHub</a></li>
+    </ul>
+  </div>
+  
+</footer>
+<div class="toast" role="status" aria-live="polite" data-toast></div>
+
+</body>
+</html>

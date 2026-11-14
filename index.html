@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KiLoRA: Mix several LoRAs in ComfyUI without conflict.</title>
+<meta name="description" content="Mix several LoRAs in ComfyUI without conflict, solve a style LoRA from a few prompts or images, and save your own mods. A free, open-source node pack.">
+<link rel="alternate" hreflang="en" href="https://harnessix.github.io/kilora-site/">
+<link rel="alternate" hreflang="x-default" href="https://harnessix.github.io/kilora-site/">
+<link rel="canonical" href="https://harnessix.github.io/kilora-site/">
+<meta name="theme-color" content="#fbf8f3">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KiLoRA">
+<meta property="og:title" content="KiLoRA: Mix several LoRAs in ComfyUI without conflict.">
+<meta property="og:description" content="Mix several LoRAs in ComfyUI without conflict, solve a style LoRA from a few prompts or images, and save your own mods. A free, open-source node pack.">
+<meta property="og:url" content="https://harnessix.github.io/kilora-site/">
+<meta property="og:image" content="https://harnessix.github.io/kilora-site/assets/banner.1c1c6410ca.png">
+<meta property="og:image:width" content="1680">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="KiLoRA: 7 LoRAs, same seed. Plain stack vs KiLoRA.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KiLoRA: Mix several LoRAs in ComfyUI without conflict.">
+<meta name="twitter:description" content="Mix several LoRAs in ComfyUI without conflict, solve a style LoRA from a few prompts or images, and save your own mods. A free, open-source node pack.">
+<meta name="twitter:image" content="https://harnessix.github.io/kilora-site/assets/banner.1c1c6410ca.png">
+<link rel="preload" href="./assets/fonts/bricolage-var.aebe1ebbd3.woff" as="font" type="font/woff" crossorigin>
+<link rel="icon" href="./assets/icon.81e6618a1c.svg" type="image/svg+xml">
+<link rel="icon" href="./favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.258ebed6ac.png">
+<link rel="manifest" href="./site.webmanifest">
+
+<link rel="stylesheet" href="./assets/home.0e758543e6.css">
+</head>
+<body class="toon-home">
+<a class="skip" href="#main">Skip to content</a>
+<header class="menubar">
+  <a class="brand" href="./" aria-label="KiLoRA home"><img src="./assets/icon.81e6618a1c.svg" alt="" width="22" height="22">KiLoRA</a>
+  <nav aria-label="Pages">
+    <a href="#mix">Mix</a>
+    <a href="#regions">Regions</a>
+    <a href="#make">Make your own</a>
+    <a href="#deeper">Go deeper</a>
+    <a href="#install">Install</a>
+    <a href="./docs/">Docs</a>
+    <a href="https://github.com/harnessix/kilora" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="hero-copy">
+    <p class="tag">ComfyUI node pack · v0.0.10 · free and open source</p>
+    <h1>Mix your LoRAs.<br>Keep every look.</h1>
+    <p class="lede">Stack seven LoRAs and the picture turns to mud. KiLoRA routes them, so each one leads where it is strong.</p>
+    <div class="cta">
+      <a class="btn btn-main" href="#install">Install</a>
+      <a class="btn" href="https://github.com/harnessix/kilora" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <div class="win hero-win">
+    <div class="win-bar"><i></i><i></i><i></i><span>kilora-promo.mp4</span></div>
+    <video src="./assets/art/kilora-promo.d6c745b277.mp4" poster="./assets/art/kilora-promo-poster.42037bc3c4.jpg" autoplay muted loop playsinline preload="metadata" aria-label="KiLoRA promo video: plain stack vs KiLoRA, then the ComfyUI nodes"></video>
+  </div>
+  <img class="mascot hero-mascot" src="./assets/icon.81e6618a1c.svg" alt="" width="150" height="150">
+</section>
+
+<section class="sec" id="mix">
+  <h2>7 LoRAs. Same seed.</h2>
+  <p class="sub">Each LoRA at 0.7. On the left, the stock LoRA loader. On the right, KiLoRA.</p>
+  <div class="pair">
+    <figure class="card tilt-l"><span class="ribbon r-stack">Plain stack</span><img src="./assets/art/mix7-stack.8974f72cfe.webp" alt="Plain stack of seven LoRAs: a beige texture with a coral blob, no picture" width="900" height="900"><span class="sticker">Overcooked!</span></figure>
+    <figure class="card tilt-r"><span class="ribbon r-kilora">KiLoRA</span><img src="./assets/art/mix7-kilora.9d8527f135.webp" alt="KiLoRA with the same seven LoRAs: a coral-haired girl with a red paper umbrella on a stone bridge under cherry blossoms" width="900" height="900"></figure>
+  </div>
+  <ul class="chips"><li>mascot girl</li><li>Monet</li><li>Van Gogh</li><li>ukiyo-e</li><li>sketch</li><li>pc98</li><li>mono</li></ul>
+
+  <h3 class="sub-h">Two painters, one picture.</h3>
+  <p class="sub">Monet + Van Gogh, 0.7 each. The stack gets muddy; KiLoRA keeps both.</p>
+  <div class="pairs-2">
+    <div class="pair pair-sm">
+      <figure class="card"><span class="ribbon r-stack">Plain stack</span><img src="./assets/art/harbor-stack.b92c629989.webp" alt="Harbor at sunset, plain stack: muddy, over-textured strokes" width="900" height="900"></figure>
+      <figure class="card"><span class="ribbon r-kilora">KiLoRA</span><img src="./assets/art/harbor-kilora.badaad101b.webp" alt="Harbor at sunset with KiLoRA: clean brushwork from both painters" width="900" height="900"></figure>
+    </div>
+    <div class="pair pair-sm">
+      <figure class="card"><span class="ribbon r-stack">Plain stack</span><img src="./assets/art/walk-stack.449db4c72b.webp" alt="Girl in a red coat walking a dog, plain stack" width="900" height="900"></figure>
+      <figure class="card"><span class="ribbon r-kilora">KiLoRA</span><img src="./assets/art/walk-kilora.4a17d0a483.webp" alt="Girl in a red coat walking a dog, KiLoRA" width="900" height="900"></figure>
+    </div>
+  </div>
+
+  <div class="win graph-win">
+    <div class="win-bar dark"><i></i><i></i><i></i><span>ComfyUI</span></div>
+    <div class="graph">
+      <div class="node"><b>KiLoRA Add LoRA (style)</b><p><span>LoRA file</span><em>monet.safetensors</em></p><p><span>strength</span><em>0.70</em></p></div>
+      <div class="node"><b>KiLoRA Add LoRA (style 2)</b><p><span>LoRA file</span><em>van-gogh.safetensors</em></p><p><span>strength</span><em>0.70</em></p></div>
+      <div class="node node-key"><b>KiLoRA Apply Mod List</b><p><span>depth</span><em>3</em></p><p><span>routing</span><em>token · sparsemax</em></p></div>
+      <div class="node"><b>KSampler</b><p><span>seed</span><em>811</em></p><p><span>steps</span><em>30</em></p></div>
+    </div>
+    <p class="graph-cap">One node chain. Put it where your LoRA loader was.</p>
+  </div>
+</section>
+
+<section class="sec" id="regions">
+  <h2>Each LoRA in its own place.</h2>
+  <p class="sub">Same seed, same two LoRAs at 0.7: our mascot and a Van Gogh style. Left: a plain LoRA stack with one prompt, no KiLoRA. Right: KiLoRA with a SAM2 mask from a first render. The mascot LoRA and its prompt act inside the mask, the Van Gogh LoRA and its prompt on the background, in one model call.</p>
+  <div class="pair">
+    <figure class="card tilt-l"><span class="ribbon r-stack">Plain stack</span><img src="./assets/art/region-stack.eedafae5ee.webp" alt="Plain stack of the mascot and Van Gogh LoRAs: swirl texture over the whole image, the face included" width="900" height="900"></figure>
+    <figure class="card tilt-r"><span class="ribbon r-kilora">KiLoRA + SAM2 mask</span><img src="./assets/art/region-sam.4e06ea9f19.webp" alt="KiLoRA with a SAM2 mask: the mascot stays clean in a Van Gogh starry night over a wheat field" width="900" height="900"></figure>
+  </div>
+  <div class="win graph-win">
+    <div class="win-bar dark"><i></i><i></i><i></i><span>ComfyUI</span></div>
+    <div class="graph">
+      <div class="node"><b>SAM2 mask</b><p><span>from</span><em>first render</em></p></div>
+      <div class="node"><b>KiLoRA Layer</b><p><span>layer</span><em>ip · mascot</em></p><p><span>mask</span><em>SAM2</em></p></div>
+      <div class="node"><b>KiLoRA Layer</b><p><span>layer</span><em>creative · Van Gogh</em></p></div>
+      <div class="node node-key"><b>KiLoRA Layer</b><p><span>compose</span><em>single</em></p></div>
+    </div>
+    <p class="graph-cap">Any segmenter works: connect its MASK to KiLoRA Layer.</p>
+  </div>
+</section>
+
+<section class="sec" id="make">
+  <h2>Make your own looks.</h2>
+  <div class="feats">
+
+    <article class="feat">
+      <h3>Solve a LoRA from a few prompts</h3>
+      <p>Write a style and a few subject lines. <code>KiLoRA Solve LoRA From Prompts</code> writes a plain LoRA file in about three minutes on a 16 GB GPU. No training images.</p>
+      <div class="pair pair-xs">
+        <figure class="card"><span class="ribbon r-base">Base</span><img src="./assets/art/fox-base.54df32cc0b.webp" alt="Base model: a red fox in sunflowers" width="900" height="900"></figure>
+        <figure class="card"><span class="ribbon r-kilora">Solved LoRA</span><img src="./assets/art/fox-vangogh.348c909c38.webp" alt="With the Van Gogh LoRA solved from prompts: swirling painted fox and sunflowers" width="900" height="900"></figure>
+      </div>
+    </article>
+
+    <article class="feat">
+      <h3>Learn a style from a few images</h3>
+      <p><code>KiLoRA Solve LoRA From Images</code> learns what images share. Here: four public-domain Monet paintings, then a new subject.</p>
+      <div class="thumbs"><img src="./assets/art/monet-1.6107b8de09.webp" alt=""><img src="./assets/art/monet-2.f3832ca17e.webp" alt=""><img src="./assets/art/monet-3.9915d50152.webp" alt=""><img src="./assets/art/monet-4.375ad7a205.webp" alt=""></div>
+      <div class="pair pair-xs">
+        <figure class="card"><span class="ribbon r-base">Base</span><img src="./assets/art/cat-base.1ad74c6bdb.webp" alt="Base model: a cat asleep on a windowsill" width="900" height="900"></figure>
+        <figure class="card"><span class="ribbon r-kilora">Monet LoRA</span><img src="./assets/art/cat-monet.191872f2f1.webp" alt="With the Monet LoRA learned from four paintings: soft impressionist light" width="900" height="900"></figure>
+      </div>
+    </article>
+
+    <article class="feat feat-wide">
+      <h3>It learns from the images you keep</h3>
+      <p>Put <code>KiLoRA Live: 1. Record</code> before the sampler and <code>2. Write</code> after it. Each image you keep nudges the mix. Undo any write.</p>
+      <div class="strip">
+        <figure class="card"><span class="ribbon r-base">First</span><img src="./assets/art/live-1.881cea5916.webp" alt="Live round 1: a village street with flower boxes" width="900" height="900"></figure>
+        <figure class="card"><img src="./assets/art/live-2.03aea93b3b.webp" alt="Live round 2" width="900" height="900"><span class="sticker sticker-ok">Write ✓</span></figure>
+        <figure class="card"><img src="./assets/art/live-3.118e130400.webp" alt="Live round 3" width="900" height="900"><span class="sticker sticker-ok">Write ✓</span></figure>
+        <figure class="card"><img src="./assets/art/live-4.d24ff04b2b.webp" alt="Live round 4" width="900" height="900"><span class="sticker sticker-ok">Write ✓</span></figure>
+      </div>
+    </article>
+
+    <article class="feat feat-wide">
+      <h3>Save your mix. Pack it. Share it.</h3>
+      <p>Export the session as a <code>.kmod</code>, bundle it with <code>KiLoRA Pack</code>, and load it anywhere with <code>KiLoRA Load Mod</code>.</p>
+      <div class="pack-row">
+        <figure class="card pack-card"><span class="ribbon r-stack">Pack</span><img src="./assets/art/live-4.d24ff04b2b.webp" alt="" width="900" height="900"><figcaption><b>village-look</b><span>.kpack · 1 mod · 0.70</span></figcaption></figure>
+      </div>
+      <h3 class="sub-h">One lighthouse, seven ways.</h3>
+      <p class="sub">Same prompt (Monet and Van Gogh named in it), same seed. Plain stack = ComfyUI's LoRA loader, no KiLoRA. A <code>.kmod</code> stores both LoRAs at 0.7 and is loaded at 1.0.</p>
+      <div class="pack-row">
+        <figure class="card"><span class="ribbon r-base">No LoRA</span><img src="./assets/art/lighthouse-base.c9498ac4d7.webp" alt="No LoRA, prompt only" width="900" height="900"></figure>
+        <figure class="card"><span class="ribbon r-stack">Plain stack 0.7</span><img src="./assets/art/lh-stack-0.7.0c8284d3eb.webp" alt="Plain stack without KiLoRA, Monet and Van Gogh at 0.7 each" width="900" height="900"></figure>
+        <figure class="card"><span class="ribbon r-kilora">KiLoRA 0.7</span><img src="./assets/art/lh-kilora-0.7.28a664c308.webp" alt="KiLoRA routing, Monet and Van Gogh at 0.7 each" width="900" height="900"></figure>
+        <figure class="card"><span class="ribbon r-kilora">.kmod, no edits</span><img src="./assets/art/lighthouse-kmod.d20bd3a6ec.webp" alt="The two LoRAs saved as a .kmod without live edits, loaded at 1.0" width="900" height="900"></figure>
+        <figure class="card"><span class="ribbon r-stack">Plain stack 1.0</span><img src="./assets/art/lh-stack-1.0.477a9f9562.webp" alt="Plain stack without KiLoRA, Monet and Van Gogh at 1.0 each" width="900" height="900"></figure>
+        <figure class="card"><span class="ribbon r-kilora">KiLoRA 1.0</span><img src="./assets/art/lh-kilora-1.0.8ab5c43d3f.webp" alt="KiLoRA routing, Monet and Van Gogh at 1.0 each" width="900" height="900"></figure>
+        <figure class="card"><span class="ribbon r-kilora">.kmod, 8 live edits</span><img src="./assets/art/lh-kmod-8w.aa9fc091e6.webp" alt="The .kmod after 8 live edits on other prompts, loaded at 1.0" width="900" height="900"></figure>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="sec" id="deeper">
+  <h2>Go deeper.</h2>
+  <p class="sub">KiLoRA can run your LoRAs through several passes. Monet and Van Gogh at 0.7, same seed, same harbor: the layout holds while the painting deepens. Times are per image, 1024 px, 20 steps.</p>
+  <div class="strip">
+    <figure class="card"><span class="ribbon r-base">Depth 2</span><img src="./assets/art/depth-2.83801512e8.webp" alt="Harbor at depth 2, 22 s per image" width="900" height="900"><span class="sticker">22 s</span></figure>
+    <figure class="card"><span class="ribbon r-base">Depth 3</span><img src="./assets/art/depth-3.ac5a04582c.webp" alt="Harbor at depth 3, 30 s per image" width="900" height="900"><span class="sticker">30 s</span></figure>
+    <figure class="card"><span class="ribbon r-kilora">Depth 5</span><img src="./assets/art/depth-5.6b3b32865e.webp" alt="Harbor at depth 5, 46 s per image" width="900" height="900"><span class="sticker">46 s</span></figure>
+    <figure class="card"><span class="ribbon r-kilora">Depth 7</span><img src="./assets/art/depth-7.bf5dab0651.webp" alt="Harbor at depth 7, 62 s per image" width="900" height="900"><span class="sticker">62 s</span></figure>
+  </div>
+  <h3 class="sub-h">Spend depth where it matters.</h3>
+  <p class="sub">With <code>KiLoRA Depth Map</code>, a mask gives the subject depth 5 and the background depth 1.</p>
+  <div class="pair pair-sm">
+    <figure class="card tilt-l"><span class="ribbon r-base">Mask</span><img src="./assets/art/depthmap-mask.79cc7ae27f.webp" alt="Mask around the girl" width="900" height="900"></figure>
+    <figure class="card tilt-r"><span class="ribbon r-kilora">Depth map result</span><img src="./assets/art/depthmap-result.79190fe280.webp" alt="Seven-LoRA scene with depth 5 on the girl and depth 1 on the background" width="900" height="900"></figure>
+  </div>
+  <div class="win">
+    <div class="win-bar"><i></i><i></i><i></i><span>kilora-go-deeper.mp4</span></div>
+    <video src="./assets/art/kilora-go-deeper.16af88c8a1.mp4" poster="./assets/art/kilora-go-deeper-poster.62eaa51990.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Go deeper: depth 2 to 7 and a depth map"></video>
+  </div>
+</section>
+
+<section class="sec" id="install">
+  <h2>Install</h2>
+  <div class="win install-win">
+    <div class="win-bar"><i></i><i></i><i></i><span>Terminal</span></div>
+    <ol class="steps">
+      <li><p>Clone into <code>ComfyUI/custom_nodes/</code>:</p><pre><code>git clone https://github.com/harnessix/kilora ComfyUI/custom_nodes/kilora</code></pre></li>
+      <li><p>Install the requirements and restart ComfyUI:</p><pre><code>pip install -r ComfyUI/custom_nodes/kilora/requirements.txt</code></pre></li>
+      <li><p>Plain LoRA files stay in <code>ComfyUI/models/loras/</code>. Mods (<code>.kmod.safetensors</code>) go into <code>ComfyUI/models/kilora/</code>.</p></li>
+      <li><p>Use <b>KiLoRA LoRA Loader</b> in place of the LoRA loader, and generate as usual.</p></li>
+    </ol>
+  </div>
+  <div class="links-row">
+    <a class="btn btn-main" href="https://github.com/harnessix/kilora" rel="noopener">github.com/harnessix/kilora</a>
+    <a class="btn" href="https://github.com/harnessix/kilora-skills" rel="noopener">Agent skills: kilora-skills</a>
+    <a class="btn" href="./docs/quick-start/">Quick start</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <img src="./assets/icon.81e6618a1c.svg" alt="" width="56" height="56">
+  <p><b>KiLoRA</b> v0.0.10 · open source · Apache-2.0</p>
+  <p class="foot-links"><a href="https://github.com/harnessix/kilora" rel="noopener">GitHub</a><a href="https://github.com/harnessix/kilora-skills" rel="noopener">Agent skills</a><a href="./install/">Install</a><a href="./docs/">Docs</a><a href="./license/">License and attribution</a></p>
+  <p class="foot-note">Painting styles in the examples come from public-domain works.</p>
+</footer>
+</body>
+</html>

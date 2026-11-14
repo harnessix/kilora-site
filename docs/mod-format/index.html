@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mod file format · KiLoRA</title>
+<meta name="description" content="What a mod file contains, how to name it, and why it holds no code.">
+<link rel="canonical" href="https://harnessix.github.io/kilora-site/docs/mod-format/">
+<meta name="theme-color" content="#eef0eb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11120f" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KiLoRA">
+<meta property="og:title" content="Mod file format · KiLoRA">
+<meta property="og:description" content="What a mod file contains, how to name it, and why it holds no code.">
+<meta property="og:url" content="https://harnessix.github.io/kilora-site/docs/mod-format/">
+<meta property="og:image" content="https://harnessix.github.io/kilora-site/assets/banner.1c1c6410ca.png">
+<meta property="og:image:width" content="1680">
+<meta property="og:image:height" content="720">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mod file format · KiLoRA">
+<meta name="twitter:description" content="What a mod file contains, how to name it, and why it holds no code.">
+<meta name="twitter:image" content="https://harnessix.github.io/kilora-site/assets/banner.1c1c6410ca.png">
+<link rel="preload" href="../../assets/fonts/bricolage-var.aebe1ebbd3.woff" as="font" type="font/woff" crossorigin>
+<link rel="icon" href="../../assets/icon.81e6618a1c.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.258ebed6ac.png">
+<link rel="manifest" href="../../site.webmanifest">
+
+<link rel="stylesheet" href="../../assets/site.c50ab05e8c.css">
+<link rel="stylesheet" href="../../assets/toon.56abc6d321.css">
+<script>window.SITE_ROOT = "../../";</script>
+<script defer src="../../assets/site-data.723903dc5b.js"></script>
+<script defer src="../../assets/site.82b37228dd.js"></script>
+</head>
+<body class="subpage">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <a class="brand" href="../../" aria-label="KiLoRA home"><img class="mark" src="../../assets/icon.81e6618a1c.svg" alt="" width="28" height="28">KiLoRA</a>
+  <nav aria-label="Pages">
+    <a href="../../#mix">Mix</a>
+    <a href="../../#make">Make your own</a>
+    <a href="../../install/">Install</a>
+    <a href="../../docs/">Docs</a>
+    <a href="../../license/">License</a>
+  </nav>
+  
+  <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme" aria-pressed="false">
+    <svg class="i-moon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path></svg>
+    <svg class="i-sun" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+  </button>
+  <a class="btn btn-small" href="https://github.com/harnessix/kilora" rel="noopener">GitHub</a>
+</header>
+
+<main id="main" class="page docs-page">
+<div class="docs-layout">
+<nav class="docs-nav" aria-label="Docs"><p class="docs-nav-h">Docs</p><ul><li><a href="../../docs/">Overview</a></li><li><a href="../../docs/quick-start/">Quick start</a></li><li><a href="../../install/">Install</a></li><li><a href="../../docs/nodes/">Node reference</a></li><li><a href="../../docs/mod-format/" aria-current="page">Mod file format</a></li><li><a href="../../docs/creators/">Creator guide</a></li><li><a href="../../docs/faq/">FAQ</a></li><li><a href="../../license/">License and attribution</a></li></ul></nav>
+<article class="docs-article">
+<h1>Mod file format</h1>
+<p class="section-lede">A mod is one file. It holds numbers, example images and a short description. It holds no code.</p>
+
+<h2 id="name">File name</h2>
+<p>A mod file is named <code>&lt;mod id&gt;.&lt;base model&gt;.kmod.safetensors</code>, for example <code>my-style.zimage.kmod.safetensors</code>. The short ending <code>.kmod</code> also works. Put mod files in <code>ComfyUI/models/kilora/</code>.</p>
+
+<h2 id="contents">What is inside</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-labelledby="contents">
+  <table>
+    <thead><tr><th scope="col">Part</th><th scope="col">What it is</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Weights</th><td>The trained numbers of the mod, as standard safetensors tensors</td></tr>
+      <tr><th scope="row">Example images</th><td>Small example images, stored inside the file</td></tr>
+      <tr><th scope="row">Manifest</th><td>A short description in the file header: name, base model, license, recommended strength, trigger words</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="safe">No code</h2>
+<p>The file is a standard safetensors file. Any safetensors reader can open it. KiLoRA never runs code from a mod file and never unpickles it.</p>
+
+<h2 id="tools">Other tools</h2>
+<ul class="plain-list">
+  <li>The file header also carries the common model-card fields (title, author, license, trigger words), so model sites can show the basics.</li>
+  <li>A plain LoRA loader finds nothing it knows in a mod file. It changes nothing, so it cannot apply a mod the wrong way. Use the KiLoRA nodes.</li>
+  <li>Saving the same mod again gives the same bytes. Model sites can find a file by its hash.</li>
+</ul>
+
+<h2 id="manifest">Main manifest fields</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-labelledby="manifest">
+  <table>
+    <thead><tr><th scope="col">Field</th><th scope="col">Example</th></tr></thead>
+    <tbody>
+      <tr><th scope="row"><code>id</code></th><td><code>my-style</code></td></tr>
+      <tr><th scope="row"><code>name</code></th><td>My Style</td></tr>
+      <tr><th scope="row"><code>license</code></th><td>The creator's choice, for example <code>CC-BY-4.0</code></td></tr>
+      <tr><th scope="row"><code>base_model</code></th><td>The base model family, for example Z-Image</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The full field list is in the code repository: <a href="https://github.com/harnessix/kilora/blob/main/docs/mod-format.md" rel="noopener">docs/mod-format.md</a>.</p>
+<p class="docs-next"><a href="../../docs/creators/">Next: Creator guide →</a></p>
+</article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-grid">
+    <div>
+      <p class="brand"><img class="mark" src="../../assets/icon.81e6618a1c.svg" alt="" width="28" height="28">KiLoRA</p>
+      <p class="muted">Keyed, Iterative and Composable Low-Rank Adaptation. Made by harnessix.</p>
+      <p class="muted small">Example mods are trained on <a href="../../license/#training-data">PD12M</a>: CC0 and Public Domain Mark images, with metadata under CDLA-Permissive-2.0.</p>
+    </div>
+    <ul class="links">
+      <li><a href="../../#mix">Mix</a></li>
+      <li><a href="../../#make">Make your own</a></li>
+      <li><a href="../../install/">Install</a></li>
+      <li><a href="../../docs/">Docs</a></li>
+      
+      <li><a href="../../license/">License and attribution</a></li>
+      <li><a href="https://github.com/harnessix/kilora" rel="noopener">GitHub</a></li>
+    </ul>
+  </div>
+  
+</footer>
+<div class="toast" role="status" aria-live="polite" data-toast></div>
+
+</body>
+</html>

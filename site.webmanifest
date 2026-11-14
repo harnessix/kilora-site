@@ -1,0 +1,26 @@
+{
+ "name": "KiLoRA",
+ "short_name": "KiLoRA",
+ "start_url": "./",
+ "display": "standalone",
+ "background_color": "#fbf8f3",
+ "theme_color": "#17140f",
+ "icons": [
+  {
+   "src": "assets/icons/icon-192.f1690f110e.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "assets/icons/icon-512.d0657296fc.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "assets/icons/icon-maskable-512.8176519bb1.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}

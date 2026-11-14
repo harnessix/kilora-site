@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Node reference · KiLoRA</title>
+<meta name="description" content="Every KiLoRA node for ComfyUI in one list: what each one does and where it sits in the node menu.">
+<link rel="canonical" href="https://harnessix.github.io/kilora-site/docs/nodes/">
+<meta name="theme-color" content="#eef0eb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11120f" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KiLoRA">
+<meta property="og:title" content="Node reference · KiLoRA">
+<meta property="og:description" content="Every KiLoRA node for ComfyUI in one list: what each one does and where it sits in the node menu.">
+<meta property="og:url" content="https://harnessix.github.io/kilora-site/docs/nodes/">
+<meta property="og:image" content="https://harnessix.github.io/kilora-site/assets/banner.1c1c6410ca.png">
+<meta property="og:image:width" content="1680">
+<meta property="og:image:height" content="720">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Node reference · KiLoRA">
+<meta name="twitter:description" content="Every KiLoRA node for ComfyUI in one list: what each one does and where it sits in the node menu.">
+<meta name="twitter:image" content="https://harnessix.github.io/kilora-site/assets/banner.1c1c6410ca.png">
+<link rel="preload" href="../../assets/fonts/bricolage-var.aebe1ebbd3.woff" as="font" type="font/woff" crossorigin>
+<link rel="icon" href="../../assets/icon.81e6618a1c.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.258ebed6ac.png">
+<link rel="manifest" href="../../site.webmanifest">
+
+<link rel="stylesheet" href="../../assets/site.c50ab05e8c.css">
+<link rel="stylesheet" href="../../assets/toon.56abc6d321.css">
+<script>window.SITE_ROOT = "../../";</script>
+<script defer src="../../assets/site-data.723903dc5b.js"></script>
+<script defer src="../../assets/site.82b37228dd.js"></script>
+</head>
+<body class="subpage">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <a class="brand" href="../../" aria-label="KiLoRA home"><img class="mark" src="../../assets/icon.81e6618a1c.svg" alt="" width="28" height="28">KiLoRA</a>
+  <nav aria-label="Pages">
+    <a href="../../#mix">Mix</a>
+    <a href="../../#make">Make your own</a>
+    <a href="../../install/">Install</a>
+    <a href="../../docs/">Docs</a>
+    <a href="../../license/">License</a>
+  </nav>
+  
+  <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme" aria-pressed="false">
+    <svg class="i-moon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path></svg>
+    <svg class="i-sun" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+  </button>
+  <a class="btn btn-small" href="https://github.com/harnessix/kilora" rel="noopener">GitHub</a>
+</header>
+
+<main id="main" class="page docs-page">
+<div class="docs-layout">
+<nav class="docs-nav" aria-label="Docs"><p class="docs-nav-h">Docs</p><ul><li><a href="../../docs/">Overview</a></li><li><a href="../../docs/quick-start/">Quick start</a></li><li><a href="../../install/">Install</a></li><li><a href="../../docs/nodes/" aria-current="page">Node reference</a></li><li><a href="../../docs/mod-format/">Mod file format</a></li><li><a href="../../docs/creators/">Creator guide</a></li><li><a href="../../docs/faq/">FAQ</a></li><li><a href="../../license/">License and attribution</a></li></ul></nav>
+<article class="docs-article">
+<h1>Node reference</h1>
+<p class="section-lede">KiLoRA adds these nodes to ComfyUI. Find them under the KiLoRA entry of the node menu, or search by name. Each node shows the same text as a tooltip in ComfyUI.</p>
+<p>You do not need most of them. A first workflow uses KiLoRA LoRA Loader in place of Load LoRA, or KiLoRA Load Mod for one mod file. The other nodes add control when you want it.</p>
+<h2 id="nodes-core">Main nodes</h2><p>Loaders, settings, maps and tools. Most workflows need only one or two of these.</p><div class="table-wrap nodes-table" tabindex="0" role="region" aria-labelledby="nodes-core"><table><thead><tr><th scope="col">Node</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">KiLoRA Trigger Words</th><td>Shows the trigger words of a LoRA file, from its metadata, its training tags and a Civitai sidecar.</td></tr><tr><th scope="row">KiLoRA Clear Local History</th><td>Remove the local history of applied chains.</td></tr><tr><th scope="row">KiLoRA Remove Mods</th><td>Removes all KiLoRA mods from a model.</td></tr><tr><th scope="row">KiLoRA Mod Info</th><td>Shows the creator&#x27;s hints for a mod: strength, trigger words, example prompt and depth.</td></tr><tr><th scope="row">KiLoRA Load Mod</th><td>Loads one KiLoRA mod into a copy of the model. Use it like a LoRA loader.</td></tr><tr><th scope="row">KiLoRA Depth Schedule</th><td>Sets the depth of each block, also by sampling progress, from a list, a preset or an expression. Connect it to KiLoRA Apply Mod List.</td></tr><tr><th scope="row">KiLoRA Settings (Simple)</th><td>KiLoRA settings with one choice: how the LoRAs mix. Connect it to the settings input of KiLoRA Apply or a KiLoRA LoRA node. The mix values: balanced: the defaults of KiLoRA Apply, with depth and routing from each mod. keep_each_strong: each token takes only its best LoRA, at full strength (routing scope token, routing select top1). subtle: one pass and one smooth blend per layer (depth 1, routing scope tensor, routing select sparsemax). stack: KiLoRA LoRA Loader does not route and gives the same output as Load LoRA. The other nodes use the balanced values for stack.</td></tr><tr><th scope="row">KiLoRA Settings</th><td>KiLoRA settings: a mix, and single values that replace the values of the mix. Connect it to the settings input of KiLoRA Apply or a KiLoRA LoRA node. Content keys default to per_expert; mix is the compatibility choice. Fused gate statistics are faster; torch reproduces images made before this release.</td></tr><tr><th scope="row">KiLoRA LoRA Loader</th><td>Use it in place of Load LoRA. It patches CLIP like Load LoRA. The model LoRAs of all chained KiLoRA LoRA Loaders are routed together when sampling starts. With mix set to stack, the output is the same as Load LoRA.</td></tr><tr><th scope="row">KiLoRA Route Loaded LoRAs</th><td>Put it after your LoRA loaders. It takes the LoRAs that the loaders put on the model and routes them with KiLoRA. Each LoRA keeps its model strength. CLIP is not changed. If the LoRAs cannot be told apart, they stay as loaded and the report says so.</td></tr><tr><th scope="row">KiLoRA Route Record</th><td>Records where each LoRA acts while the sampler runs. Connect its model to the sampler and its routes to KiLoRA Route Map.</td></tr><tr><th scope="row">KiLoRA Route Map</th><td>Shows where each LoRA acted in the last sampled image: one colored panel per LoRA, with a legend. Connect the routes of KiLoRA Route Record and the decoded image.</td></tr><tr><th scope="row">KiLoRA Timeline</th><td>Sets one value over the run: the strength of a mod, or when it is active, for example. Chain Timeline nodes to add rows, and connect the last one to KiLoRA Apply or the LoRA loader. The plot in the node shows every row.</td></tr><tr><th scope="row">KiLoRA Depth Map</th><td>A depth per image area, from a mask (SAM2 and other segmenters) or an image (its brightness: depth, lineart or pose maps from ControlNet preprocessors). Until start, every area runs one depth, so the layout forms as usual. Then each area runs its own depth. Connect it to KiLoRA Apply or KiLoRA LoRA Loader.</td></tr><tr><th scope="row">KiLoRA Layer</th><td>Selects the axes for this conditioning and sets its mask.</td></tr><tr><th scope="row">KiLoRA Layer Filter</th><td>Limit added model function patches to one layer. Weight and object patches remain global.</td></tr><tr><th scope="row">KiLoRA LoRA Library</th><td>Select LoRAs at the first sampling step and save a recipe.</td></tr><tr><th scope="row">KiLoRA Similar LoRAs</th><td>Find installed LoRAs with similar content features in the same base family.</td></tr><tr><th scope="row">KiLoRA Prepare LoRAs</th><td>Prepare supported LoRA files and routing keys. Connect a model to prepare the selected mix in the listed order.</td></tr><tr><th scope="row">KiLoRA Mention Prompt</th><td>Encode a prompt in which @name calls a LoRA from the library. The mentions are removed before the text encoder and added to the mod list.</td></tr></tbody></table></div><h2 id="nodes-mod-list">Mod list nodes</h2><p>Build a list of mods and LoRAs, then apply the list in one node. Region, role and canvas nodes act on the whole list.</p><div class="table-wrap nodes-table" tabindex="0" role="region" aria-labelledby="nodes-mod-list"><table><thead><tr><th scope="col">Node</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">KiLoRA Mod List: Add Mod</th><td>Adds one mod to a mod list. Chain several, then connect the list to KiLoRA Apply Mod List.</td></tr><tr><th scope="row">KiLoRA Mod List: Add LoRA</th><td>Adds a plain LoRA file to a mod list.</td></tr><tr><th scope="row">KiLoRA Palette</th><td>Loads a saved palette (LoRA and mod files with strengths, roles and trigger words) as a mod list. Shuffle picks a different set for each seed.</td></tr><tr><th scope="row">KiLoRA Save Palette</th><td>Saves a mod list as a palette file without weights, for example a Shuffle pick.</td></tr><tr><th scope="row">KiLoRA Mod List: Suggest LoRAs</th><td>Lists installed LoRAs by co-usage or embedding similarity.</td></tr><tr><th scope="row">KiLoRA Mod List: Check</th><td>Shows the load order and any problems. The model is not changed.</td></tr><tr><th scope="row">KiLoRA Apply Mod List</th><td>Loads all mods of a mod list into a copy of the model.</td></tr><tr><th scope="row">KiLoRA Mod List: Region</th><td>Limits the mods of a mod list to the masked area of the image. Each mod chooses its experts from that area. Chain lists with different masks to place mods in different areas.</td></tr><tr><th scope="row">KiLoRA Mod List: Region Attention</th><td>Experimental. Keeps the change of each KiLoRA region inside its region. In a window of sampling after the layout forms, the tokens of a region attend less (soft) or not at all (hard) to tokens outside it. Connect it after KiLoRA Apply.</td></tr><tr><th scope="row">KiLoRA Mod List: Token Roles</th><td>Sets which tokens the mods of a mod list change in an editing workflow: the target image, the reference images or the text. Other tokens keep the base weights.</td></tr><tr><th scope="row">KiLoRA Mod List: Two Panels</th><td>Marks a two-panel canvas. One panel holds the reference picture and the other is the image being made. Mods on auto roles change only the target panel. Applies to every mod of the list.</td></tr><tr><th scope="row">KiLoRA Mod List: Region Isolation</th><td>Experimental. Keeps the area outside the KiLoRA regions as the base model makes it. In the first part of sampling, a base-only branch runs next to the sampler, and the outside follows it. Each step in that part costs one extra model call. Connect it after KiLoRA Apply.</td></tr><tr><th scope="row">KiLoRA Save Recipe</th><td>Saves a mod list and settings as references without copying the weights.</td></tr><tr><th scope="row">KiLoRA Direction Nodes</th><td>Add direction nodes from a stored library basis.</td></tr></tbody></table></div><h2 id="nodes-live">Live mode nodes</h2><p>Record and write around the sampler, with undo, saves and export. Experimental.</p><div class="table-wrap nodes-table" tabindex="0" role="region" aria-labelledby="nodes-live"><table><thead><tr><th scope="col">Node</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">KiLoRA Live: Undo, Reset, Save</th><td>Undo, reset, save points and loading for a live mod.</td></tr><tr><th scope="row">KiLoRA Live: Settings</th><td>Turns learning on or off, and sets the learning speed.</td></tr><tr><th scope="row">KiLoRA Live: Editor Packs</th><td>Lists the installed editor packs, turns packs on or off, and shows the packs of the loaded save.</td></tr><tr><th scope="row">KiLoRA Live: Freeze as Static Mod</th><td>Saves the live mod&#x27;s current state as a new static mod.</td></tr><tr><th scope="row">KiLoRA Live: Export for Sharing</th><td>Saves a live mod for sharing. By default without what it learned from you.</td></tr><tr><th scope="row">KiLoRA Live: 1. Record (before sampler)</th><td>Put before the sampler to record a live mod or imported LoRAs, even without a live mod.</td></tr><tr><th scope="row">KiLoRA Live: 2. Write (after sampler)</th><td>Live mode, step 2. Put it after the sampler. The editor updates the live mod. You can undo it. A guard refuses a write that lowers prompt following or collapses the image. Without the CLIP on Record, the guard is off.</td></tr></tbody></table></div>
+<p class="docs-next"><a href="../../docs/mod-format/">Next: Mod file format →</a></p>
+</article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-grid">
+    <div>
+      <p class="brand"><img class="mark" src="../../assets/icon.81e6618a1c.svg" alt="" width="28" height="28">KiLoRA</p>
+      <p class="muted">Keyed, Iterative and Composable Low-Rank Adaptation. Made by harnessix.</p>
+      <p class="muted small">Example mods are trained on <a href="../../license/#training-data">PD12M</a>: CC0 and Public Domain Mark images, with metadata under CDLA-Permissive-2.0.</p>
+    </div>
+    <ul class="links">
+      <li><a href="../../#mix">Mix</a></li>
+      <li><a href="../../#make">Make your own</a></li>
+      <li><a href="../../install/">Install</a></li>
+      <li><a href="../../docs/">Docs</a></li>
+      
+      <li><a href="../../license/">License and attribution</a></li>
+      <li><a href="https://github.com/harnessix/kilora" rel="noopener">GitHub</a></li>
+    </ul>
+  </div>
+  
+</footer>
+<div class="toast" role="status" aria-live="polite" data-toast></div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+/* Mac + toon look for the subpages, layered over site.css. Light only. */
+@font-face { font-family: 'Bricolage'; src: url('./fonts/bricolage-var.aebe1ebbd3.woff') format('woff'); font-weight: 200 800; font-display: swap; }
+:root { --t-ink: #2b2233; --t-soft: #6d6385; --t-mint: #b9f0d8; }
+html, html[data-theme] { color-scheme: light; }
+body.subpage, body.subpage[class] { color: var(--t-ink); background: radial-gradient(900px 600px at 10% 0%, #ffd9c9 0%, transparent 60%), radial-gradient(900px 700px at 95% 20%, #d9dcff 0%, transparent 60%), radial-gradient(1000px 700px at 50% 100%, #c9ecff 0%, transparent 60%), #f4efff; }
+.theme-toggle, [data-theme-toggle] { display: none !important; }
+
+header.bar { position: sticky; top: 0; z-index: 5; background: rgba(255, 255, 255, 0.6) !important; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid rgba(0, 0, 0, 0.05); min-height: 40px; }
+header.bar .brand { font-family: 'Bricolage', system-ui, sans-serif; font-weight: 800; color: var(--t-ink); }
+header.bar .brand .mark, .foot .brand .mark { border-radius: 50%; }
+header.bar nav a { color: var(--t-ink); }
+header.bar .btn-small { border: 3px solid var(--t-ink); border-radius: 999px; background: var(--t-mint); color: var(--t-ink); box-shadow: 3px 3px 0 var(--t-ink); font-family: 'Bricolage', sans-serif; font-weight: 750; }
+
+main.page { position: relative; max-width: 1180px; margin: 40px auto 56px; padding: 64px clamp(20px, 4vw, 56px) 48px; background: rgba(255, 255, 255, 0.78); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-radius: 22px; box-shadow: 0 30px 80px rgba(70, 50, 120, 0.16), 0 2px 6px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.7); }
+main.page::before { content: ''; position: absolute; left: 18px; top: 16px; width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; box-shadow: 20px 0 0 #febc2e, 40px 0 0 #28c840; }
+main.page h1, main.page h2, main.page h3 { font-family: 'Bricolage', system-ui, sans-serif !important; letter-spacing: -0.02em; color: var(--t-ink); }
+main.page h1 { font-weight: 800; }
+main.page h2 { font-weight: 780; border-color: rgba(43, 34, 51, 0.15) !important; }
+main.page a { color: var(--t-ink); }
+main.page pre, main.page .code, main.page [class*="code-block"] { border-radius: 12px !important; }
+main.page code { border-radius: 6px; }
+main.page table { border: 3px solid var(--t-ink) !important; border-radius: 16px !important; overflow: hidden; box-shadow: 6px 7px 0 var(--t-ink); background: #fff; }
+.docs-nav a[aria-current="page"] { border-color: var(--t-ink) !important; color: var(--t-ink); font-weight: 700; background: var(--t-mint); border-radius: 8px; }
+.foot { background: transparent !important; }
+.foot .brand { font-family: 'Bricolage', sans-serif; font-weight: 800; }
+@media (max-width: 700px) {
+  main.page { margin: 16px 10px 32px; border-radius: 18px; padding-top: 52px; }
+  main.page table { box-shadow: 4px 4px 0 var(--t-ink); }
+}

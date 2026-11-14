@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ · KiLoRA</title>
+<meta name="description" content="Short answers about mixing LoRAs, mods, hardware, files and licenses.">
+<link rel="canonical" href="https://harnessix.github.io/kilora-site/docs/faq/">
+<meta name="theme-color" content="#eef0eb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11120f" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KiLoRA">
+<meta property="og:title" content="FAQ · KiLoRA">
+<meta property="og:description" content="Short answers about mixing LoRAs, mods, hardware, files and licenses.">
+<meta property="og:url" content="https://harnessix.github.io/kilora-site/docs/faq/">
+<meta property="og:image" content="https://harnessix.github.io/kilora-site/assets/banner.1c1c6410ca.png">
+<meta property="og:image:width" content="1680">
+<meta property="og:image:height" content="720">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FAQ · KiLoRA">
+<meta name="twitter:description" content="Short answers about mixing LoRAs, mods, hardware, files and licenses.">
+<meta name="twitter:image" content="https://harnessix.github.io/kilora-site/assets/banner.1c1c6410ca.png">
+<link rel="preload" href="../../assets/fonts/bricolage-var.aebe1ebbd3.woff" as="font" type="font/woff" crossorigin>
+<link rel="icon" href="../../assets/icon.81e6618a1c.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.258ebed6ac.png">
+<link rel="manifest" href="../../site.webmanifest">
+
+<link rel="stylesheet" href="../../assets/site.c50ab05e8c.css">
+<link rel="stylesheet" href="../../assets/toon.56abc6d321.css">
+<script>window.SITE_ROOT = "../../";</script>
+<script defer src="../../assets/site-data.723903dc5b.js"></script>
+<script defer src="../../assets/site.82b37228dd.js"></script>
+</head>
+<body class="subpage">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <a class="brand" href="../../" aria-label="KiLoRA home"><img class="mark" src="../../assets/icon.81e6618a1c.svg" alt="" width="28" height="28">KiLoRA</a>
+  <nav aria-label="Pages">
+    <a href="../../#mix">Mix</a>
+    <a href="../../#make">Make your own</a>
+    <a href="../../install/">Install</a>
+    <a href="../../docs/">Docs</a>
+    <a href="../../license/">License</a>
+  </nav>
+  
+  <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme" aria-pressed="false">
+    <svg class="i-moon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path></svg>
+    <svg class="i-sun" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+  </button>
+  <a class="btn btn-small" href="https://github.com/harnessix/kilora" rel="noopener">GitHub</a>
+</header>
+
+<main id="main" class="page docs-page">
+<div class="docs-layout">
+<nav class="docs-nav" aria-label="Docs"><p class="docs-nav-h">Docs</p><ul><li><a href="../../docs/">Overview</a></li><li><a href="../../docs/quick-start/">Quick start</a></li><li><a href="../../install/">Install</a></li><li><a href="../../docs/nodes/">Node reference</a></li><li><a href="../../docs/mod-format/">Mod file format</a></li><li><a href="../../docs/creators/">Creator guide</a></li><li><a href="../../docs/faq/" aria-current="page">FAQ</a></li><li><a href="../../license/">License and attribution</a></li></ul></nav>
+<article class="docs-article">
+<h1>FAQ</h1>
+<p class="section-lede">Short answers. If your question is not here, ask in the code repository's Discussions.</p>
+<div class="faq faq-docs">
+  <details><summary>Is a mod a LoRA?</summary><p>It is LoRA-style: small changes on a frozen base model. A mod is its own file type, so it loads through the KiLoRA nodes, not a plain LoRA loader.</p></details>
+  <details><summary>Can I use my LoRA files as they are?</summary><p>Yes. Add them with KiLoRA Mod List: Add LoRA or KiLoRA LoRA Loader. KiLoRA reads the usual key forms: ComfyUI, kohya, Diffusers and PEFT.</p></details>
+  <details><summary>Can I get the same image as the stock LoRA loader?</summary><p>Yes. Set <code>mix</code> to <code>stack</code> in KiLoRA Settings (Simple). Each LoRA then runs as a plain LoRA, and the result is the stock result.</p></details>
+  <details><summary>What hardware do I need?</summary><p>What your base model needs. KiLoRA adds a small amount of work per layer, and GGUF and fp8 models keep their memory size.</p></details>
+  <details><summary>Which base models work?</summary><p>Anima and FLUX.3 Klein are verified on GPU. Other families are CPU-tested or experimental. The table is on the <a href="../../#make">home page</a>.</p></details>
+  <details><summary>Do my images leave my computer?</summary><p>No. Everything runs locally.</p></details>
+  <details><summary>Can a mod file run code?</summary><p>No. A mod file is a standard safetensors file with numbers, example images and a short description.</p></details>
+</div>
+<p class="docs-next"><a href="../../license/">Next: License and attribution →</a></p>
+</article>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-grid">
+    <div>
+      <p class="brand"><img class="mark" src="../../assets/icon.81e6618a1c.svg" alt="" width="28" height="28">KiLoRA</p>
+      <p class="muted">Keyed, Iterative and Composable Low-Rank Adaptation. Made by harnessix.</p>
+      <p class="muted small">Example mods are trained on <a href="../../license/#training-data">PD12M</a>: CC0 and Public Domain Mark images, with metadata under CDLA-Permissive-2.0.</p>
+    </div>
+    <ul class="links">
+      <li><a href="../../#mix">Mix</a></li>
+      <li><a href="../../#make">Make your own</a></li>
+      <li><a href="../../install/">Install</a></li>
+      <li><a href="../../docs/">Docs</a></li>
+      
+      <li><a href="../../license/">License and attribution</a></li>
+      <li><a href="https://github.com/harnessix/kilora" rel="noopener">GitHub</a></li>
+    </ul>
+  </div>
+  
+</footer>
+<div class="toast" role="status" aria-live="polite" data-toast></div>
+
+</body>
+</html>
